@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUBYRED</title>
+    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="pic/logooo.png">
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #222;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    .top-section {
+      background-image: url('pic/sewing.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .name h1 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .name span {
+      color: #ff6b6b;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .nav a:hover {
+      color: #ff6b6b;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+    }
+
+    .card-inner {
+      background: linear-gradient(135deg, #444, #222);
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      will-change: transform;
+      position: relative;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(360deg);
+    }
+
+    /* Text container absolutely centered and above the card */
+    .card-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <section class="top-section">
+    <div class="header">
+      <div class="name"><h1>RUBY<span>RED</span> GARMENT</h1></div>
+      <div class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="HR.html">HR</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="cards-container">
+    <div class="card" onclick="location.href='PRODUCTION.html'" role="link" tabindex="0" aria-label="HR Department Login">
+      <div class="card-inner"></div>
+      <div class="card-text">PRODUCTION</div>
+    </div>
+
+    <div class="card" onclick="location.href='CUTTING.html'" role="link" tabindex="0" aria-label="Finance Department Login">
+      <div class="card-inner"></div>
+      <div class="card-text">CUTTING</div>
+    </div>
+
+    <div class="card" onclick="location.href='QA.html'" role="link" tabindex="0" aria-label="IT Department Login">
+      <div class="card-inner"></div>
+      <div class="card-text">QA</div>
+    </div>
+
+    <div class="card" onclick="location.href='PRINTING.html'" role="link" tabindex="0" aria-label="Marketing Department Login">
+      <div class="card-inner"></div>
+      <div class="card-text">PRINTING</div>
+    </div>
+
+    <div class="card" onclick="location.href='EMBROIDERY.html'" role="link" tabindex="0" aria-label="Operations Department Login">
+      <div class="card-inner"></div>
+      <div class="card-text">EMBROIDERY</div>
+    </div>
+
+    <div class="card" onclick="location.href='WAREHOUSE.html'" role="link" tabindex="0" aria-label="Sales Department Login">
+      <div class="card-inner"></div>
+      <div class="card-text">WAREHOUSE</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <img src="pic/logooo.png" alt="">
+    <p>RUBYRED GARMENT</p>
+    <div class="social">
+      <a href="https://www.facebook.com/RUBYREDGARMENTSAE/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/rubyred-garment-manufacturing-s-a-e/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:hr@rubyredgarment.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <script>
+    // Accessibility: allow keyboard navigation and Enter/Space to activate cards
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
